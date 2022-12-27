@@ -1,0 +1,2 @@
+# Cloudformation-VPC-Flowlogs
+This template creates a VPC flow logs resource that captures all traffic in the specified VPC and sends the logs to a CloudWatch Logs group. Replace VPC with the ID of your VPC and LogGroup with the name of your CloudWatch Logs group. You will also need to specify an IAM role (LogDeliveryRoleArn) that has permission to write to the CloudWatch Logs group.

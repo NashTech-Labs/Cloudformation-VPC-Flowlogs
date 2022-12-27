@@ -1,0 +1,18 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Create a VPC flow logs resource'
+Resources:
+  VPCFlowLogs:
+    Type: AWS::EC2::FlowLog
+    Properties:
+      ResourceId: !Ref VPC
+      ResourceType: VPC
+      TrafficType: ALL
+      LogGroupName: !Ref LogGroup
+      DeliverLogsPermissionArn: !Ref LogDeliveryRoleArn
+      LogDestinationType: cloud-watch-logs
+
+Outputs:
+  FlowLogId:
+    Value: !Ref VPCFlowLogs
+    Description: The ID of the VPC flow logs resource
